@@ -1,7 +1,6 @@
-LABEL org.opencontainers.image.authors="kerta1n"
-
 # Stage 1: Build stage
 FROM python:3-alpine AS builder
+LABEL org.opencontainers.image.authors="kerta1n"
 
 WORKDIR /build
 
@@ -16,6 +15,7 @@ RUN apk add --no-cache git && \
 
 # Stage 2: Runtime stage
 FROM python:3-alpine
+LABEL org.opencontainers.image.authors="kerta1n"
 
 WORKDIR /app
 
@@ -29,3 +29,4 @@ EXPOSE 8695
 
 # Run the server with the token from environment variable
 CMD python server.py --fb-token ${FB_TOKEN}
+
