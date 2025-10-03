@@ -2293,5 +2293,5 @@ def get_activities_by_adset(
 
 if __name__ == "__main__":
     _get_fb_access_token()
-    mcp.run(transport="http", host="0.0.0.0", port=8695)
+    mcp.run(transport="http", host="0.0.0.0", port=8695, path="/mcp")
     
