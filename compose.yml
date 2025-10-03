@@ -1,0 +1,17 @@
+services:
+    fb-ads-mcp:
+        container_name: fb-ads-mcp
+        restart: unless-stopped
+        image: kertain/fb-ads-mcp:latest
+        ports:
+          - "8695:8695"
+        environment:
+            - FB_TOKEN=token-not-initialized
+            - TZ=America/Indiana/Indianapolis
+
+        # command: python server.py --fb-token ${FB_TOKEN}
+
+networks:
+    default:
+        external: true
+        name: dc
