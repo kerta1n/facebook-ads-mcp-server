@@ -19,7 +19,7 @@ DEFAULT_AD_ACCOUNT_FIELDS = [
 ]
 
 # Create an MCP server
-mcp = FastMCP("fb-api-mcp-server")
+mcp = FastMCP("fb-api-mcp-server", host="0.0.0.0", port=8695)
 
 # Add a global variable to store the token
 FB_ACCESS_TOKEN = None
@@ -2293,6 +2293,6 @@ def get_activities_by_adset(
 
 if __name__ == "__main__":
     _get_fb_access_token()
-    mcp.run(transport="streamable-http", host="0.0.0.0", port=8695, path="/")
+    mcp.run(transport="streamable-http")
     
     ### https://github.com/jlowin/fastmcp/issues/873
